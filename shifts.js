@@ -9,7 +9,7 @@ function calculatePay(hours, rate) {
     regularHours * rate +
     overtimeHours * rate * 1.5;
 
-  return Math.round(totalPay);
+  return Math.max(0, Math.round(totalPay));
 }
 
 module.exports = { isValidShift, calculatePay };

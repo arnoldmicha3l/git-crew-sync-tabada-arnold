@@ -25,4 +25,11 @@ assertEqual(
   'pay for a 10-hour shift includes time-and-a-half overtime'
 );
 
+const negativePay = shifts.calculatePay(-2, 20);
+assertEqual(
+  negativePay,
+  0,
+  'negative hours do not produce negative pay'
+);
+
 process.exitCode = failures > 0 ? 1 : 0;
